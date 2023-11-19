@@ -2,8 +2,14 @@
 <h1>Talleres del ciclo escolar 2023</h1>
 
 <%# Embebed ruby tag regular: %>
-<% if @valor == 2 %>
+<%# Quita los primeros 2 elementos (. y ..) porque son del directorio. %>
+<% @files.drop(2).each do |file| %>
 
-    <%# Embebed ruby tag de salida (se debe agregar el simbolo: =) %>
-    <p>El valor es: <%= @valor %></p>
+<%# Embebed ruby tag de salida (se debe agregar el simbolo: =) %>
+    <li>
+        <%# Remueve la extension del nombre del archivo: %>
+        <a href="/<%= File.basename(file, ".*") %>"> <%= File.basename(file, ".*") %> </a>
+    </li>
 <% end %>
+
+<button>
