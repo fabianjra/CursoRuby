@@ -1,0 +1,18 @@
+<h1>Editar taller de <%= @name %></h1>
+
+<form action="/<%= @name %>" method="post">
+
+    <input type="hidden" name="_method" value="put">
+
+    <fieldset>
+        <label for="description">Descripcion: </label> </br>
+        <textarea name="description" rows="3" cols="50" id="description">
+            <%= @description %>
+        </textarea>
+    </fieldset>
+
+    </br>
+
+    <input type="submit" name="delete" value="Eitar taller">
+
+</form>

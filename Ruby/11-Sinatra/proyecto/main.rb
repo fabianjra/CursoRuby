@@ -45,6 +45,15 @@ get '/:name' do
     erb :workshop
 end
 
+#Cargar los datos en la pagina de modificar
+get '/:name/edit' do
+
+    @name = params[:name]
+    @description = workshop_content(@name)
+
+    erb :edit  
+end
+
 #Metodo post
 post '/create' do
 
@@ -60,12 +69,23 @@ post '/create' do
     # "<p> #{@name} y #{@description}</p>"
 end
 
+#Metodo HTTP UPDATE: Modificar un taller.
+put '/:name' do
+
+    @name = params["name"]
+    @description = params["description"]
+
+    save_workshop(@name, @description)
+
+    redirect @name
+end
+
 #Metodo HTTP delete: Borrar un taller.
 delete '/:name' do 
     @name = params[:name]
-
-    @text = "El taller fue eliminado exitosamente."
+   
     delete_workshop(@name)
 
+    @text = "El taller fue eliminado exitosamente."
     erb :message
 end

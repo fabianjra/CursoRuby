@@ -3,6 +3,14 @@
 <p><%= @description%><p>
 
 <div>
+
+    <button>
+        <a href="/<%= @name %>/edit">Editar taller</a>
+    </button>
+
+    </br>
+    </br>
+
     <form action="/<%= @name %>" method="post">
 
         <input type="hidden" name="_method" value="delete">
