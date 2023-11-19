@@ -9,6 +9,16 @@ def workshop_content(name)
         return nil
 end
 
+#Escritura de archivos.
+def save_workshop(name, description)
+
+    #Crea un archivo y se coloca en la carpeta de workshops
+    #Cuando se intenta abrir un archivo que no existe, entonces lo que hace es crearlo.
+    File.open("workshops/#{name}.txt", "w") do |file|
+        file.print(description)
+    end
+end
+
 get '/' do 
     @files =  Dir.entries("workshops")
 
@@ -28,4 +38,18 @@ get '/:name' do
     #Variable de instancia para obtener el contenido de los archivos txt:
     @description = workshop_content(@name)
     erb :workshop
+end
+
+#Metodo post
+post '/create' do
+
+    #Se almacena la informacion recibida del formulario en el Submit
+    @name = params["name"]
+    @description = params["description"]
+
+    save_workshop(@name, @description)
+
+    erb :new
+
+    # "<p> #{@name} y #{@description}</p>"
 end
