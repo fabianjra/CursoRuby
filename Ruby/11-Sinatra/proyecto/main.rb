@@ -77,7 +77,7 @@ put '/:name' do
 
     save_workshop(@name, @description)
 
-    redirect @name
+    redirect CGI.escape("/#{@name}")
 end
 
 #Metodo HTTP delete: Borrar un taller.
