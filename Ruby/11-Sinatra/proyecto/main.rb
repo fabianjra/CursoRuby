@@ -19,6 +19,11 @@ def save_workshop(name, description)
     end
 end
 
+#Borrar un archivo txt (taller)
+def delete_workshop(name)
+    File.delete("workshops/#{name}.txt")
+end
+
 get '/' do 
     @files =  Dir.entries("workshops")
 
@@ -47,9 +52,20 @@ post '/create' do
     @name = params["name"]
     @description = params["description"]
 
+    @text = "El taller fue creado exitosamente."
     save_workshop(@name, @description)
 
-    erb :new
+    erb :message
 
     # "<p> #{@name} y #{@description}</p>"
+end
+
+#Metodo HTTP delete: Borrar un taller.
+delete '/:name' do 
+    @name = params[:name]
+
+    @text = "El taller fue eliminado exitosamente."
+    delete_workshop(@name)
+
+    erb :message
 end
