@@ -1466,3 +1466,96 @@ Processing by CoursesController#edit as HTML
 Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.1ms | Allocations: 4123)
 
 
+Started GET "/courses/3/edit" for 127.0.0.1 at 2023-11-19 21:57:57 -0600
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:66:in `set_course'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/edit.html.erb within layouts/application
+  Rendered courses/_form.html.erb (Duration: 2.8ms | Allocations: 1200)
+  Rendered courses/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1535)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 15284)
+Completed 200 OK in 57ms (Views: 43.5ms | ActiveRecord: 4.6ms | Allocations: 20614)
+
+
+Started GET "/courses" for 127.0.0.1 at 2023-11-19 21:58:00 -0600
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/_course.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1391)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3391)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.1ms | Allocations: 3754)
+
+
+Started GET "/courses/2" for 127.0.0.1 at 2023-11-19 21:58:01 -0600
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:66:in `set_course'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/_course.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 664)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2659)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 3357)
+
+
+Started GET "/courses/2/edit" for 127.0.0.1 at 2023-11-19 21:58:02 -0600
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:66:in `set_course'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/edit.html.erb within layouts/application
+  Rendered courses/_form.html.erb (Duration: 2.0ms | Allocations: 779)
+  Rendered courses/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 883)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2878)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 3491)
+
+
+Started PATCH "/courses/2" for 127.0.0.1 at 2023-11-19 21:58:11 -0600
+Processing by CoursesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"title"=>"matematicas", "description"=>"Matematica en todas, muy bueno este curso"}, "commit"=>"Update Course", "id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:66:in `set_course'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:43:in `block in update'
+  [1m[36mCourse Update (1.0ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = ?, "description" = ? WHERE "courses"."id" = ?[0m  [["updated_at", "2023-11-20 03:58:12.027686"], ["description", "Matematica en todas, muy bueno este curso"], ["id", 2]]
+  ↳ app/controllers/courses_controller.rb:43:in `block in update'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:43:in `block in update'
+Redirected to http://127.0.0.1:3000/courses/2
+Completed 302 Found in 12ms (ActiveRecord: 4.6ms | Allocations: 3298)
+
+
+Started GET "/courses/2" for 127.0.0.1 at 2023-11-19 21:58:12 -0600
+Processing by CoursesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:66:in `set_course'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2510)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 3164)
+
+
+Started GET "/courses" for 127.0.0.1 at 2023-11-19 21:58:13 -0600
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered courses/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2842)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 3118)
+
+
