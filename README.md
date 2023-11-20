@@ -61,4 +61,4 @@ URL del curso: https://www.udemy.com/course/curso-ruby-rails/
         * ruby bin/rails db:migrate = Ejecuta la migracion
 
 - Vistas:
-    * Partial: Son vistas parciales que se utilizan dentro de otras vistas. Se establecen con un guin bajo en su inicio.
+    * Partial: Son vistas parciales que se utilizan dentro de otras vistas. Se establecen con un guin bajo en su inicio. EJEMPLO: _form.html.erb
