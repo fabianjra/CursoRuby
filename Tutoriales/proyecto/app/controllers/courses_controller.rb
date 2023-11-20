@@ -4,6 +4,9 @@ class CoursesController < ApplicationController
   # GET /courses or /courses.json
   def index
     @courses = Course.all
+
+    #Si quisieramos ser especificos, se puede utilizar un template de manera manual
+    # render template: 'courses/index.html.erb', layout: 'application'
   end
 
   # GET /courses/1 or /courses/1.json
