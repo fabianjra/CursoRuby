@@ -24,11 +24,12 @@ URL del curso: https://www.udemy.com/course/curso-ruby-rails/
 - URL oficinal: http://rubyonrails.org
 - 2 Principios: DRY (Dont repet yourself). || Convention over Configuration (como hacer ciertas cosas).
 - Puma es el server encargado de colocar a Ruby on rails en servidor.
+- En la carpeta db/migrate = Se encontraran las migraciones realizadas, o sea, las tablas creadas.
 - Recurso: En Rails un recurso es una operacion de CRUD.
-- Scaffolds: comandos que permiten crear recursos CRUD. 
+- Scaffolds: comandos que permiten crear recursos CRUD.
 - Ejemplo Scaffold -> COMANDO: ruby bin/rails generate scaffold Courses
 
-- Acceder a IRB mediante el comando "rails console" en el directorio raiz:
+- Acceder a IRB mediante el comando: "rails console" en el directorio raiz:
 
     - Obtener registros:
         * Course.all = se ejecuta el comando para obtener todos los cursos. Esto es un ejemplo
@@ -53,3 +54,8 @@ URL del curso: https://www.udemy.com/course/curso-ruby-rails/
     - Borrar registros:
         * c = Course.find(1) = Se obtiene una variable con la instancia obtenida, la cual se va a eliminar.
         * c.destroy = Elimina el registro
+
+- Funciones fuera de IRB:
+    - Crear una migracion:
+        * ruby bin/rails generate migration addDescriptionToCourses description:text = Agrega una nueva columna a la tabla. Esto no genera los cambios automaticamente
+        * ruby bin/rails db:migrate = Ejecuta la migracion

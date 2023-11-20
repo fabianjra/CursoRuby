@@ -626,3 +626,81 @@ Completed 200 OK in 61ms (Views: 50.0ms | ActiveRecord: 2.6ms | Allocations: 189
   [1m[36mCourse Destroy (0.5ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDescriptionToCourses (20231120032931)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "courses" ADD "description" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231120032931') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Update (0.6ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = ?, "description" = ? WHERE "courses"."id" = ?[0m  [["updated_at", "2023-11-20 03:34:32.484963"], ["description", "Curos con todos los ejemplos de verdad y muy bueno, se los recomiendo"], ["id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses" for 127.0.0.1 at 2023-11-19 21:35:37 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/_course.html.erb (Duration: 0.6ms | Allocations: 194)
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered courses/index.html.erb within layouts/application (Duration: 145.4ms | Allocations: 12610)
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:35:38 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 271)
+Completed 200 OK in 38ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2217)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 720.6ms | Allocations: 53947)
+Completed 200 OK in 1137ms (Views: 781.4ms | ActiveRecord: 4.3ms | Allocations: 64803)
+
+
+Started GET "/courses" for 127.0.0.1 at 2023-11-19 21:35:43 -0600
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 847)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2850)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.6ms | Allocations: 3133)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2023-11-19 21:35:45 -0600
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:66:in `set_course'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/_course.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2674)
+Completed 200 OK in 103ms (Views: 12.5ms | ActiveRecord: 0.1ms | Allocations: 12433)
+
+
+Started GET "/courses" for 127.0.0.1 at 2023-11-19 21:35:48 -0600
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered courses/_course.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 847)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2848)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 3130)
+
+
