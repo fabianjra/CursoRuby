@@ -28,6 +28,7 @@ get '/' do
     @files =  Dir.entries("workshops")
 
     #se agrega el arhiv erb y se asigna como simbolo:
+    #Se puede enviar un segundo paramtro de hash, para utilizar un template
     erb :home
 end
 

@@ -10,3 +10,4 @@ URL del curso: https://www.udemy.com/course/curso-ruby-rails/
 ## SINATRA:
 - En sinatra todo se lee de arriba hacia abajo.
 - Los archivos .erb sirven para hacer HTML embebido con sinatra. Se insertan etiquetas HTML, junto a variables de instancia con las etiquetas <%= valor %>
+- layout.erb = Se utiliza para usar globalmente ese archivo HTML como template para todas las paginas.
