@@ -59,3 +59,6 @@ URL del curso: https://www.udemy.com/course/curso-ruby-rails/
     - Crear una migracion:
         * ruby bin/rails generate migration addDescriptionToCourses description:text = Agrega una nueva columna a la tabla. Esto no genera los cambios automaticamente
         * ruby bin/rails db:migrate = Ejecuta la migracion
+
+- Vistas:
+    * Partial: Son vistas parciales que se utilizan dentro de otras vistas. Se establecen con un guin bajo en su inicio.
